@@ -6,6 +6,7 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import exphbs from "express-handlebars";
 import path from "path";
+import userRoutes from "./routes/userRoutes";
 
 class Server{
 	public app:Application;
@@ -39,7 +40,8 @@ class Server{
 	}
     //ACA VAN TODAS LAS RUTAS DE LA APP
 	routes():void{
-        this.app.use(indexRoutes); 
+        this.app.use(indexRoutes);
+		this.app.use("/user",userRoutes); //user sera un objeto existene en la app. 
     }
 	start():void{
 		this.app.listen(this.app.get('port'),() => {
