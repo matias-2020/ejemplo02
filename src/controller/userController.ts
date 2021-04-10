@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 
 class UserController{
-
+     //ingreso
 	public signin(req:Request,res:Response){
 		console.log(req.body);
         //res.send('Sign In!!!');
